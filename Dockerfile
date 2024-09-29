@@ -13,7 +13,6 @@ RUN apk update && apk add --no-cache \
     linux-headers
 
 COPY ./requirements.txt /tmp/requirements.txt
-COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./app /app
 
 WORKDIR /app

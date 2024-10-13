@@ -14,7 +14,7 @@ RUN apk update && apk add --no-cache \
 
 COPY ./requirements.txt /tmp/requirements.txt
 COPY ./app /app
-
+EXPOSE 8000
 WORKDIR /app
 
 ARG DEV=false
@@ -25,12 +25,13 @@ RUN python3 -m venv /py && \
         build-base postgresql-dev musl-dev && \
     /py/bin/pip install -r /tmp/requirements.txt && \
     rm -rf /tmp && \
-    apk del .tmp-build-dev
+    adduser \
+        --disabled-password \
+        --no-create-home \
+        django-user
 
-RUN adduser --disabled-password --no-create-home django-user
+
 
 ENV PATH="/py/bin:$PATH"
-
-EXPOSE 8000
 
 USER django-user

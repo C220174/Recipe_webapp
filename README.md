@@ -15,3 +15,10 @@ docker-compose run --rm app sh -c "python manage.py startapp core"
 docker-compose run --rm app sh -c "python manage.py test"
 
 docker-compose run --rm app sh -c "python manage.py test && flake8"
+
+docker-compose run --rm app sh -c "python manage.py makemigrations"
+
+docker-compose run --rm app sh -c "python manage.py migrate"
+
+docker volume ls
+docker volume rm recipe_webapp_dev-db-data -> and docker down to refresh db

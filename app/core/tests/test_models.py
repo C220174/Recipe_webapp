@@ -7,7 +7,7 @@ class ModelTests(TestCase):
     def test_create_user_with_email_successful(self):
         email = 'macdol.test@example.com'
         password = 'testpass123'
-        user = get_user_model().objects.creat_user(
+        user = get_user_model().objects.create_user(
             email=email,
             password=password,
         )

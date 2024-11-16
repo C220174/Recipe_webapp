@@ -22,3 +22,5 @@ docker-compose run --rm app sh -c "python manage.py migrate"
 
 docker volume ls
 docker volume rm recipe_webapp_dev-db-data -> and docker down to refresh db
+
+docker-compose run --rm app sh -c "python manage.py createsuperuser"

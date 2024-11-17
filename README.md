@@ -25,4 +25,4 @@ docker volume rm recipe_webapp_dev-db-data -> and docker down to refresh db
 
 docker-compose run --rm app sh -c "python manage.py createsuperuser"
 
-// use drf specular for api documentation  (next time use Swagger UI)
+// use drf specular for api documentation  (use Swagger UI)
